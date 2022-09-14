@@ -120,6 +120,12 @@ insert into clients (Fname, Minit, Lname, CPF, Address)
               ('Francisco', 'F', 'Souza', 45678913, 'avenida Calos de santos 10, cidade Verde'),
               ('Ana', 'S', 'Andrade', 789123456, 'rua mixirica 44, Centro - cidade Verde'),
               ('Lidia', 'G', 'Antares', 98745631, 'rua Xicara 10 - cidade Verde');
+	      
+	     
+ALTER TABLE `clients`
+CHANGE `Address` `Address` varchar(255) COLLATE 'utf8mb4_general_ci' NULL AFTER `CPF`;
+
+
               
           
 insert into product (Pname, category, size) values
@@ -130,3 +136,21 @@ insert into product (Pname, category, size) values
                     ('Sofá ',  'Móveis',  '3x57x80');
                     
                     
+select * from clients;
+select * from product;
+
+
+insert into orders (id_order_client, order_status, order_escription, send_value, payment_cash) values
+			(6, default, 'compra via aplicativo', null, 1),
+            (7, default, 'compra via aplicativo', 50, 0),
+            (9, 'Confirmado', null, null, 1),
+            (10, default, 'compra via web site', 150, 0);
+
+
+insert into productStorage (storageLocation, quantity) values
+	  ('Anacleto Jarbas', 1000),
+            ('Guamiranga', 500),
+            ('Santos', 10),
+            ('Santos', 100),
+            ('Rio Branco', 10),
+            ('Brasília', 60);
